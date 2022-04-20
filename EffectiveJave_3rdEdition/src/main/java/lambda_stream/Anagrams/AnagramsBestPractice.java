@@ -1,4 +1,4 @@
-package lambda_stream;
+package lambda_stream.Anagrams;
 
 import java.io.IOException;
 import java.nio.file.Files;
