@@ -17,7 +17,7 @@ import java.util.TreeSet;
 public class Anagrams {
 
     /* 単語一覧のファイルパス, 出力条件の閾値 */
-    static final String[] SAMPLE = {"src/main/resources/anagrams.txt", "2"};
+    static final String[] SAMPLE = {"src/main/resources/lamda_stream/anagrams.txt", "2"};
 
     public static void main(String[] args) throws FileNotFoundException {
         exe(SAMPLE);
