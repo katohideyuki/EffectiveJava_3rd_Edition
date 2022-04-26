@@ -5,10 +5,11 @@ package dubug;
  * 受け取った文字列を出力するだけ
  */
 public class Debug {
+    /* メソッド名 出力用 */
     public static void log(String methodName) {
         System.out.println("""
-                -----------------------------
-                 ▼ %sの使用例
-                ----------------------------- """.formatted(methodName));
+                %n------------------------------------------
+                  %sの使用例
+                ------------------------------------------ """.formatted(methodName));
     }
 }
