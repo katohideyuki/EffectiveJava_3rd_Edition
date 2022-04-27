@@ -1,7 +1,7 @@
-package builderPattern;
+package create_disappearance.builderPattern;
 
-import builderPattern.NyPizza.Size;
-import builderPattern.Pizza.Topping;
+import create_disappearance.builderPattern.NyPizza.Size;
+import create_disappearance.builderPattern.Pizza.Topping;
 
 /**
  * クラス階層に対するビルダーパターンを使用<br>

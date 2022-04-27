@@ -1,4 +1,4 @@
-package builderPattern;
+package create_disappearance.builderPattern;
 
 import java.util.EnumSet;
 import java.util.Objects;

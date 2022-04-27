@@ -1,4 +1,4 @@
-package builderPattern;
+package create_disappearance.builderPattern;
 
 /**
  * Builderパターンの基本構造<br>

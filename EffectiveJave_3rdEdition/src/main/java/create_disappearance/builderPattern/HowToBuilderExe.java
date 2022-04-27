@@ -1,4 +1,4 @@
-package builderPattern;
+package create_disappearance.builderPattern;
 
 /**
  * HowToBuilderを使用<br>
