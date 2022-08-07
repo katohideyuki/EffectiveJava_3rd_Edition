@@ -1,4 +1,4 @@
-package classAndInterface.MinimizeAccess;
+package ch04_classAndInterface.sec17_MinimizeAccess;
 
 /**
  * 不変な複素数クラス ※3
