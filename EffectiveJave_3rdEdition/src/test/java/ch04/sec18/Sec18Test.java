@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import ch04_classAndInterface.sec18_composition.*;
 
 @DisplayName("InstrumentedHashSetTestクラスは、要素を追加した分だけ挿入回数をインクリメントする")
-public class InstrumentedHashSetTest {
+public class Sec18Test {
 
     @Nested
     class InstrumentedHashSetクラスのテスト{
