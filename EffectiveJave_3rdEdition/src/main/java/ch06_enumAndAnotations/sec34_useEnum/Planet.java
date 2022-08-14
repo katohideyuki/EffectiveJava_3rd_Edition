@@ -1,4 +1,4 @@
-package useEnum;
+package ch06_enumAndAnotations.sec34_useEnum;
 
 /**
  * データと振る舞いを持つenum型
@@ -32,11 +32,7 @@ public enum Planet {
     public double surfaceGravity()           { return surfaceGravity; }
     public double surfaceWeight(double mass) { return mass * surfaceGravity; } // F = ma
 }
-
 /**
- * <pre>
- * memo
- * - enum.valuesメソッド
- *   enumクラスに定義されている定数を配列で返す（序数順に）
- * </pre>
+ * enumのメソッドはなるべく隠蔽すること。
+ *   - enum定数と関連付けられたメソッドの場合が多く、他クラスから呼ぶ必要が少ないため。
  */
