@@ -1,4 +1,4 @@
-package ch04_classAndInterface.sec23_perferClassHierarchies;
+package ch04_classAndInterface.sec23_preferClassHierarchies;
 
 /** 長方形のクラス */
 class Rectangle extends FigureGoodEx {

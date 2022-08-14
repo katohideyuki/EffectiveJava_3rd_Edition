@@ -1,4 +1,4 @@
-package ch04_classAndInterface.sec23_perferClassHierarchies;
+package ch04_classAndInterface.sec23_preferClassHierarchies;
 
 /**
  * タグ付きクラス - クラス階層よりも劣る
