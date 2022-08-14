@@ -1,4 +1,4 @@
-package ch06_enumAndAnotations.sec34_useEnum;
+package ch06_enumAndAnotations.sec34_preferEnum;
 
 
 /** コードを共有するために値でswitchするenum - 問題が多い */

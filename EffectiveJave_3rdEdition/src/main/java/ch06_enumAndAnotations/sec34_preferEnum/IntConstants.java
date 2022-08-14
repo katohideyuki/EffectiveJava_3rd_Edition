@@ -1,4 +1,4 @@
-package ch06_enumAndAnotations.sec34_useEnum;
+package ch06_enumAndAnotations.sec34_preferEnum;
 
 /** int enumパターン　- 不完全 */
 public class IntConstants {

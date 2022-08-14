@@ -1,16 +1,15 @@
 package ch05.sec34;
 
+import static ch06_enumAndAnotations.sec34_preferEnum.IntConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import ch06_enumAndAnotations.sec34_useEnum.*;
+import ch06_enumAndAnotations.sec34_preferEnum.*;
 
-import static ch06_enumAndAnotations.sec34_useEnum.IntConstants.*;
-
-@DisplayName("useEnumパッケージのテスト")
+@DisplayName("preferEnumパッケージのテスト")
 public class Sec34Test {
 
     @Nested

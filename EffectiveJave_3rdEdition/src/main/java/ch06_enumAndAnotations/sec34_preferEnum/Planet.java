@@ -1,4 +1,4 @@
-package ch06_enumAndAnotations.sec34_useEnum;
+package ch06_enumAndAnotations.sec34_preferEnum;
 
 /**
  * データと振る舞いを持つenum型
