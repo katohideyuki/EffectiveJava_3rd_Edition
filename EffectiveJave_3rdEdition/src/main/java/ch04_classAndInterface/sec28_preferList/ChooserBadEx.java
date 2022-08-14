@@ -1,4 +1,4 @@
-package ch04_classAndInterface.sec28_perferList;
+package ch04_classAndInterface.sec28_preferList;
 
 import java.util.Collection;
 import java.util.Random;

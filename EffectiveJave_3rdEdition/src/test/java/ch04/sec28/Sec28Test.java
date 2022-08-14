@@ -9,10 +9,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import ch04_classAndInterface.sec28_perferList.ChooserBadEx;
-import ch04_classAndInterface.sec28_perferList.ChooserGoodEx;
+import ch04_classAndInterface.sec28_preferList.ChooserBadEx;
+import ch04_classAndInterface.sec28_preferList.ChooserGoodEx;
 
-@DisplayName("perferListクラスのテスト")
+@DisplayName("preferListクラスのテスト")
 public class Sec28Test {
 
     private List<String> LIST = List.of("A", "B", "C");
