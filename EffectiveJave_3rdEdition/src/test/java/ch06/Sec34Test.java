@@ -1,4 +1,4 @@
-package ch06.sec34;
+package ch06;
 
 import static ch06_enumAndAnotations.sec34_preferEnum.IntConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;

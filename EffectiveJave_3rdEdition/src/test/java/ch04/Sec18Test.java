@@ -1,4 +1,4 @@
-package ch04.sec18;
+package ch04;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
