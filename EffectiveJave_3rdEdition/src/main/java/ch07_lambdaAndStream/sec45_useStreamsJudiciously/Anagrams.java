@@ -1,4 +1,4 @@
-package lambda_stream.Anagrams;
+package ch07_lambdaAndStream.sec45_useStreamsJudiciously;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,13 +11,14 @@ import java.util.TreeSet;
 
 /**
  * ストリームを使用せず実現
- * - 単語一覧を読み出して、指定した最小の閾値以上の大きさのアナグラムのグループをすべて表示する
- * - 二つのは、異なる順序で同じ文字から構成されていればアナグラム
+ *   - 単語一覧を読み出して、指定した最小の閾値以上の大きさのアナグラムのグループをすべて表示する
+ *   - 二つのは、異なる順序で同じ文字から構成されていればアナグラム
  */
 public class Anagrams {
 
     /* 単語一覧のファイルパス, 出力条件の閾値 */
-    static final String[] SAMPLE = {"src/main/resources/lamda_stream/anagrams.txt", "2"};
+    static final String[] SAMPLE = {
+            "src/main/resources/ch07_lambdaAndStream/anagrams.txt", "2"};
 
     public static void main(String[] args) throws FileNotFoundException {
         exe(SAMPLE);

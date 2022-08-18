@@ -1,4 +1,4 @@
-package lambda_stream.Anagrams;
+package ch07_lambdaAndStream.sec45_useStreamsJudiciously;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class AnagramsStream {
 
     /* 単語一覧のファイルパス, 出力条件の閾値 */
-    static final String[] SAMPLE = {"src/main/resources/lamda_stream/anagrams.txt", "2"};
+    static final String[] SAMPLE = {"src/main/resources/ch07_lambdaAndStream/anagrams.txt", "2"};
 
     public static void main(String[] args) throws IOException {
         exe(SAMPLE);

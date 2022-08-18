@@ -1,4 +1,4 @@
-package lambda_stream.Anagrams;
+package ch07_lambdaAndStream.sec45_useStreamsJudiciously;
 
 import java.io.IOException;
 import java.nio.file.Files;
