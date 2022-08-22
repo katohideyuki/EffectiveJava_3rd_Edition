@@ -1,4 +1,4 @@
-package lambda_stream.streamThanColleciton;
+package ch07_lambdaAndStream.sec47_streamThanColleciton;
 
 import java.util.Collections;
 import java.util.List;

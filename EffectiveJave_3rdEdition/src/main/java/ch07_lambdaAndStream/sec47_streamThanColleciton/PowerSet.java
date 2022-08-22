@@ -1,4 +1,4 @@
-package lambda_stream.streamThanColleciton;
+package ch07_lambdaAndStream.sec47_streamThanColleciton;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -7,21 +7,23 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import dubug.Debug;
-
 /** 戻り値型としてStreamよりもCollectionを選ぶ */
 public class PowerSet {
 
     /**
      * 引数で受け取ったSetコレクションのべき集合を、特別なコレクションとして返す
-     * @param Set型オブジェクト<E>
+     * @param  Set型オブジェクト<E>
      * @return Set型を扱う特別なコレクション - 匿名クラスAbstractList
      */
     public static final <E> Collection<Set<E>> of(Set<E> s) {
-        List<E> src = new ArrayList<>(s);                           // 受け取ったSet型をListに変換
-        if (src.size() > 30)
-            throw new IllegalArgumentException("Set too big " + s); // srcのサイズが30以上だったら例外
+        // 引数のSet型をListに変換
+        List<E> src = new ArrayList<>(s);
 
+        // リストのサイズが30以上だったら例外
+        if (src.size() > 30)
+            throw new IllegalArgumentException("Set too big " + s);
+
+        // 匿名クラスAbstractListを返却する
         return new AbstractList<Set<E>>() {
             /* 2のsrc.size()乗 左へビットシフト */
             @Override public int size() {
@@ -42,9 +44,8 @@ public class PowerSet {
         };
     }
 }
-
 /**
- * <pre>
- *
- * </pre>
+ * 使用する側がループしたいかもしれないし、SubListsクラスのようにストリームとして処理
+ * したいかもしれない。
+ * ということで、両方に適応できるようコレクションを返せるなら、そうすべきである。
  */
