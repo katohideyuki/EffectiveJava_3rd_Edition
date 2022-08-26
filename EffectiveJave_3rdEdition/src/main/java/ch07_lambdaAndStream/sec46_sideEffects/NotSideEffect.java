@@ -1,4 +1,4 @@
-package lambda_stream;
+package ch07_lambdaAndStream.sec46_sideEffects;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -15,15 +15,16 @@ import dubug.Debug;
 
 /**
  * ストリームで副作用のない関数を選ぶ
- *   - テキストファイル内の単語の頻度表を構築する
+ * テキストファイル内の単語の頻度表を構築する。
  */
 public class NotSideEffect {
+    // 読み込むファイルパス
     static final Path FILE = Paths
-            .get("src/main/resources/lamda_stream/notSideEffect.txt"); // 読み込むファイルパス
+            .get("src/main/resources/ch07_lambdaAndStream/notSideEffect.txt");
 
     public static void main(String[] args) throws IOException {
         Debug.log("badExamplePrimes");
-        System.out.println(badExamplePrimes());
+        System.out.println(badExamplePrimes(FILE));
 
         Debug.log("goodExamplePrimes");
         System.out.println(goodExamplePrimes());
@@ -32,32 +33,52 @@ public class NotSideEffect {
         System.out.println(topTen(goodExamplePrimes()));
     }
 
-    /* ストリームを使っているがパラダイムは使っていない - 悪い例（特にforEachの使い方） */
-    private static Map<String, Long> badExamplePrimes() throws IOException {
-        Map<String, Long> freq = new HashMap<>();              // 処理を行ったMapを格納
-        try (Scanner scanner = new Scanner(FILE)) {
-            Stream<String> words = scanner.tokens();           // 区切り文字で区切られた文字を読み込む
+    /**
+     * ストリームを使っているがパラダイムは使っていない - 悪い例（特にforEachの使い方）
+     * @return
+     * @throws IOException
+     */
+    private static Map<String, Long> badExamplePrimes(Path path) throws IOException {
+        // 処理を行ったMapを格納
+        Map<String, Long> freq = new HashMap<>();
+
+        // 区切り文字で区切られた文字を読み込む
+        try (Scanner scanner = new Scanner(path)) {
+            Stream<String> words = scanner.tokens();
+            // 値があれば、+1した値で上書き
             words.forEach(word -> {
-                freq.merge(word.toLowerCase(), 1L, Long::sum); // 値があれば、+1した値で上書き
+                freq.merge(word.toLowerCase(), 1L, Long::sum);
             });
             return freq;
         }
     }
 
-    /* 頻度表を初期化するための正しいストリーム - 良い例 ※1 */
+    /**
+     * 頻度表を初期化するための正しいストリーム - 良い例 ※1
+     * @return
+     * @throws IOException
+     */
     private static Map<String, Long> goodExamplePrimes() throws IOException {
-        Map<String, Long> freq;                                                // 処理を行ったMapを格納
+        // 処理を行ったMapを格納
+        Map<String, Long> freq;
+        // 区切り文字で区切られた文字を読み込む
         try (Scanner scanner = new Scanner(FILE)) {
-            Stream<String> words = scanner.tokens();                           // 区切り文字で区切られた文字を読み込む
-            freq = words.collect(groupingBy(String::toLowerCase, counting())); // 値があれば要素数の結果で上書き
+            Stream<String> words = scanner.tokens();
+            // 値があれば要素数の結果で上書き
+            freq = words.collect(groupingBy(String::toLowerCase, counting()));
         }
         return freq;
     }
 
-    /* 頻度表から単語のトップ10リストを返却するパイプライン */
+    /**
+     * 頻度表から単語のトップ10リストを返却するパイプライン
+     * @param freq
+     * @return
+     */
     private static List<String> topTen(Map<String, Long> freq) {
+        // 頻度表から文字の出現数を返却し、逆順にソート
         List<String> topTenList = freq.keySet().stream()
-                .sorted(comparing(freq::get).reversed()) // 頻度表から文字の出現数を返却し、逆順にソート
+                .sorted(comparing(freq::get).reversed())
                 .limit(10)
                 .collect(toList());
         return topTenList;
@@ -66,7 +87,7 @@ public class NotSideEffect {
 
 /**
  * <pre>
- * Stream.tokens()
+ * Scanner.tokens()
  *   - 区切り文字で区切られたトークンのストリームを返す
  *
  * Map.merge(キー1, 存在しない場合に設定する値A, 存在している場合に行う処理B)
